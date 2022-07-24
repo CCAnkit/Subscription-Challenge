@@ -9,30 +9,37 @@
 - FREE	PERSONAL	PREMIUM
  1 month Trial	 Rs.100 for 1 month	 Rs. 250 for 3 months
  Video streaming subscription plans 
+
 - FREE	PERSONAL	PREMIUM
  1 month Trial	 Rs.200 for 1 month	 Rs. 500 for 3 months
  Podcast streaming subscription plans 
+
 - FREE	PERSONAL	PREMIUM
  1 month Trial	 Rs.100 for 1 month	 Rs. 300 for 3 months
 
 ### Top Up
-DoReMi allows users to add a top up to increase the number of devices that they can stream to for an additional cost.
-A user can choose only one top up.  
-The subscribed top up is applicable for all subscriptions. 
-A top up can be added only when a subscription exists.
+- DoReMi allows users to add a top up to increase the number of devices that they can stream to for an additional cost.
+
+- A user can choose only one top up.  
+
+- The subscribed top up is applicable for all subscriptions. 
+
+- A top up can be added only when a subscription exists.
  
- FOUR_DEVICE	TEN_DEVICE
- Upto 4 Devices	 Upto 10 Devices
- Total cost: Rs.50 for 1 month	 Total cost: Rs.100 for 1 month
-Renewal Reminder
- Once a user subscribes to a plan, the user needs to be notified 10 days before the plan expires.
+FOUR_DEVICE	TEN_DEVICE
+Upto 4 Devices	 Upto 10 Devices
+Total cost: Rs.50 for 1 month	 Total cost: Rs.100 for 1 month
+
+#### Renewal Reminder
+Once a user subscribes to a plan, the user needs to be notified 10 days before the plan expires.
  
  
- ### Goal
- Given a date when the subscription starts, your program should print: 
- The date on which the reminder should be sent for each subscription category 
- The total amount for renewal. Renewal amount is the sum of all the subscription plan amount and top up amount. 
- 💡 Pro tip: Aim to get the Readability and Correctness (I/O) badges - your profile can go forward with most companies with those 2 badges. The rest can be improved upon later!
+### Goal
+Given a date when the subscription starts, your program should print: 
+- The date on which the reminder should be sent for each subscription category 
+- The total amount for renewal. Renewal amount is the sum of all the subscription plan amount and top up amount. 
+
+- 💡 Pro tip: Aim to get the Readability and Correctness (I/O) badges - your profile can go forward with most companies with those 2 badges. The rest can be improved upon later!
  
  
 #### Assumptions
@@ -45,8 +52,58 @@ Renewal Reminder
 - One top up applies to all the subscriptions being bought. 
  
  
+#### Input Commands & Format
+- Your program should take as input the start date for subscriptions, subscriptions plans to be added, top up to be added.
  
+START_SUBSCRIPTION DD-MM-YYYY 
+ADD_SUBSCRIPTION SUBSCRIPTION_CATEGORY PLAN_NAME 
+ADD_TOPUP TOP_UP_NAME NO_OF_MONTHS 
+PRINT_RENEWAL_DETAILS 
+
+##### Examples :
+START_SUBSCRIPTION 20-02-2022 
+ADD_SUBSCRIPTION MUSIC  PERSONAL 
+ADD_SUBSCRIPTION VIDEO PREMIUM 
+ADD_TOPUP ADD_TOPUP 
+PRINT_RENEWAL_DETAILS
+
+#### Output Commands & Format
+- Your program should print the renewal date for each subscription category and the total renewal amount on executing the command PRINT_RENEWAL_DETAILS.
  
+RENEWAL_REMINDER SUBSCRIPTION_CATEGORY DD-MM-YYYY 
+RENEWAL_AMOUNT AMOUNT 
+
+##### Examples :
+RENEWAL_REMINDER MUSIC 10-03-2022  
+RENEWAL_REMINDER VIDEO 10-05-2022 
+RENEWAL_AMOUNT 700
+ 
+
+#### Sample Input/Output 1
+INPUT	OUTPUT
+START_SUBSCRIPTION20-02-2022
+ADD_SUBSCRIPTIONMUSIC PERSONAL
+ADD_SUBSCRIPTIONVIDEO PREMIUM
+ADD_SUBSCRIPTIONPODCAST FREE
+ADD_TOPUPFOUR_DEVICE 3
+PRINT_RENEWAL_DETAILS	RENEWAL_REMINDERMUSIC 10-03-2022
+RENEWAL_REMINDERVIDEO 10-05-2022
+RENEWAL_REMINDERPODCAST 10-03-2022
+RENEWAL_AMOUNT750
+
+##### Explanation
+- Music Streaming for 1 Month [Personal plan]  -       100
+- Video Streaming  for 3 Month [Premium plan]  -       500
+- Podcast Streaming  for 1 Month Trial [Free plan]  -    0
+- FOUR_DEVICE’s for 3 months (50 X 3)  -               150
+- Total   -                                            750
+
+
+#### Error Scenarios
+- When a user adds the same category of subscription or top up twice or more, error_code should be printed. Error code should be printed when the date format is wrong.
+ 
+##### Error Scenarios & Error Codes 
+
 
 
 ### Pre-requisites
